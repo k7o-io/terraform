@@ -9,7 +9,7 @@ output k8s_ip {
 
 resource scaleway_k8s_cluster_beta main {
   name    = var.name
-  version = "1.18"
+  version = "1.19"
   cni     = "calico"
   tags    = var.tags
   auto_upgrade {
