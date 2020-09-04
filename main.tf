@@ -21,6 +21,10 @@ output production_kubeconfig {
   sensitive = true
 }
 
+output production_k8s_ip {
+  value = module.scaleway_production.k8s_ip
+}
+
 output production_postgres_url {
   value     = module.scaleway_production.postgres_url
   sensitive = true

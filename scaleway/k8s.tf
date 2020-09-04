@@ -3,6 +3,10 @@ output kubeconfig {
   sensitive = true
 }
 
+output k8s_ip {
+  value = scaleway_lb_ip_beta.ip.ip_address
+}
+
 resource scaleway_k8s_cluster_beta main {
   name    = var.name
   version = "1.18"
@@ -27,3 +31,5 @@ resource scaleway_k8s_pool_beta default {
   autohealing         = true
   wait_for_pool_ready = true
 }
+
+resource scaleway_lb_ip_beta ip {}
