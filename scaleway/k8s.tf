@@ -1,9 +1,13 @@
 output kubeconfig {
-  value     = scaleway_k8s_cluster_beta.main.kubeconfig[0].config_file
+  value     = scaleway_k8s_cluster_beta.main.kubeconfig[0]
   sensitive = true
+  depends_on = [
+    # Cluster requires a pool to be functional or is unreachable otherwise.
+    scaleway_k8s_pool_beta.default
+  ]
 }
 
-output k8s_ip {
+output loadbalancer_ip {
   value = scaleway_lb_ip_beta.ip.ip_address
 }
 
