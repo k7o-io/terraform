@@ -1,4 +1,3 @@
 {
-  "extends": ["github>ctison/renovate-config"],
-  "automerge": true
+  "extends": ["github>ctison/renovate"]
 }
