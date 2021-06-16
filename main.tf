@@ -15,7 +15,7 @@ terraform {
     }
     github = {
       source  = "hashicorp/github"
-      version = "2.9.2"
+      version = "4.11.0"
     }
     aws = {
       source = "hashicorp/aws"
